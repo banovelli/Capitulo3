@@ -12,14 +12,47 @@ namespace Capitulo3
 {
     public partial class Form1 : Form
     {
+        Guy joe;
+        Guy bob;
+        int bank = 100;
+
         public Form1()
         {
             InitializeComponent();
+            
+            joe = new Guy();
+            joe.Name = "Joe";
+            joe.Cash = 15;
+
+            bob = new Guy();
+            bob.Name = "Bob";
+            bob.Cash = 130;
+
+            UpdateForm();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void UpdateForm()
         {
+            joesCash.Text = joe.Name + " tem $" + joe.Cash;
+            bobsCash.Text = bob.Name + " tem $" + bob.Cash;
+            bankCash.Text = "O banco tem $" + bank;
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(bank >= 10){
+                bank -= joe.ReceiveCash(10);
+                UpdateForm();
+            }
+            else{
+                MessageBox.Show("O banco está sem dinehiro.");
+                }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bank += bob.GiveCash(5);
+            UpdateForm();
         }
     }
 }
