@@ -48,5 +48,17 @@ namespace Capitulo3
             bank += bob.GiveCash(5);
             UpdateForm();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bob.ReceiveCash(joe.GiveCash(10));
+            UpdateForm();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            joe.ReceiveCash(bob.GiveCash(5));
+            UpdateForm();
+        }
     }
 }
