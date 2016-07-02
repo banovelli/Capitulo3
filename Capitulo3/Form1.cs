@@ -19,15 +19,9 @@ namespace Capitulo3
         public Form1()
         {
             InitializeComponent();
-            
-            joe = new Guy();
-            joe.Name = "Joe";
-            joe.Cash = 15;
 
-            bob = new Guy();
-            bob.Name = "Bob";
-            bob.Cash = 130;
-
+            joe = new Guy() { Cash = 15, Name = "Joe" };
+            bob = new Guy() { Cash = 130, Name = "Bob" };
             UpdateForm();
         }
 
